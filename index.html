@@ -4,8 +4,9 @@
   <link rel="icon" href="https://industrialarea.azurewebsites.net/favicon.ico">
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
   <title>產業園區廠商情資平台 報名系統</title>
-  <link href="./css/2.0624914a.chunk.css" rel="stylesheet">
   <link href="./css/main.3639c985.chunk.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 
 <body class="nimbus-is-editor">
@@ -22,47 +23,141 @@
           <div class="input-container">
             <div class="input-box card"><h4>產業園區廠商情資平台教育訓練<br>活動報名</h4>
               <img style="position: relative; width: 100%; height: 100%;" alt="" src="./img/banner.png">
-              <label style="margin:2% 0 2% 0;">公司/學校/單位名稱*</label>
-              <input type="email" class="input" placeholder="請輸入公司/學校/單位名稱" style="color: rgb(0, 0, 0);">
+                            
+              <div class="container">
+                <main class="row">
+                  <!-- form -->
+                  <section class="six columns half form">
+                    <form>
+                      <!-- 單位名稱 -->
+                      <div class="form-group">
+                        <label for="demo_name">單位名稱</label>
+                        <input class="form-control" type="text" placeholder="請輸入園區/學校單位名稱" id="demo_name">
+                      </div>
 
-              <label style="margin:2% 0 2% 0;">部門/職稱*</label>
-              <input type="password" class="input" name="password" placeholder="請輸入部門/職稱" value="" style="color: rgb(0, 0, 0);">
+                      <!-- 單位職稱 -->
+                      <div class="form-group">
+                        <label for="demo_name">單位職稱</label>
+                        <input class="form-control" type="text" placeholder="請輸入單位職稱" id="demo_name">
+                      </div>
 
-              <label style="margin:2% 0 2% 0;">姓名*</label>
-              <input type="email" class="input" placeholder="請輸入姓名" style="color: rgb(0, 0, 0);">
+                      <!-- 姓名 -->
+                      <div class="form-group">
+                        <label for="demo_name">姓名</label>
+                        <input class="form-control" type="text" placeholder="請輸入姓名" id="demo_name">
+                      </div>
+            
+                      <!-- 性別 -->
+                      <div class="form-group">
+                        <label>性別</label>
+                        <div class="radio-group row">
+                          <!-- 男 -->
+                          <div class="four columns">
+                            <input type="radio" id="male" name="demo_radio" value="male" checked>
+                            <label for="male">男</label>
+                          </div>
+                          <!-- 女 -->
+                          <div class="four columns">
+                            <input type="radio" id="female" name="demo_radio" value="female">
+                            <label for="female">女</label>
+                          </div>
+                          <!-- 其他 -->
+                          <div class="four columns">
+                            <input type="radio" id="female" name="demo_radio" value="female">
+                            <label for="female">其他</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- 飲食習慣 -->
+                      <div class="form-group">
+                        <label>飲食習慣</label>
+                        <div class="radio-group row">
+                          <!-- 葷 -->
+                          <div class="four columns">
+                            <input type="radio" id="male" name="demo_radio" value="male" checked>
+                            <label for="male">葷</label>
+                          </div>
+                          <!-- 素 -->
+                          <div class="four columns">
+                            <input type="radio" id="female" name="demo_radio" value="female">
+                            <label for="female">素</label>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <!-- 報名場次 -->
+                      <div class="form-group">
+                        <label for="demo_select">報名場次</label>
+                        <select class="form-control" id="demo_select">
+                          <option value="0" value="0" selected disabled>請選擇欲報名的場次</option>
+                          <option value="cat">【北區場】109年6月17日(三) 南港軟體園區國際會議中心</option>
+                          <option value="dog">【中區場】109年7月7日(二) 台中工業區服務中心人才培訓中心</option>
+                          <option value="bear">【南區場】109年6月24日(三) 蓮潭國際會館國際二廳會議室</option>
+                        </select>
+                      </div>
+            
+                      <!-- 備註 -->
+                      <div class="form-group">
+                        <label for="demo_textarea">備註</label>
+                        <textarea class="form-control" id="demo_textarea"></textarea>
+                      </div>
+            
+                      <button type="button" id="submit" class="button-primary form-control">確認送出</button>
+            
+                    </form>
+                  </section>
+                </main>
+              </div>
+            
+              <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+              <script>
+                $(function() {
+                  $('#submit').on('click', function() {
+                    
+                    // 姓名
+                    var name = $('#demo_name').val() || '未填寫';
+            
+                    // 性別
+                    var sex = function() {
+                      var v;
+                      $('[name="demo_radio"]').each(function() {
+                        if($(this).prop('checked') === true) v = $(this).val();
+                      });
+                      return v;
+                    };
+            
+                    // 類別
+                    var cat = $('#demo_select').val() || '未填寫';
+            
+                    // 內容
+                    var msg = $('#demo_textarea').val() || '未填寫';
+            
+                    // post
+                    var data = {
+                      'entry.257531381': "1",
+                      'entry.123054719': "2",
+                      'entry.1802611064': "3",
+                      'entry.3992845': "4",
+                      'entry.277620602': "5",
+                      'entry.1396436476': "6",
+                      'entry.1867475675': "7"
+                    };
+                    $.ajax({
+                      type: 'POST',
+                      url: 'https://docs.google.com/forms/d/e/1FAIpQLScX5RecUWz4ppgE6sP4OlOKA2GU6dyy82qHBpqYlMorIutCUw/formResponse',
+                      data: data,
+                      contentType: 'application/json',
+                      dataType: 'jsonp',
+                      complete: function() {
+                        alert('資料已送出！');
+                      }
+                    });
+                    
+                  });
+                });
+              </script>
               
-              <label style="margin:2% 0 2% 0;">電子郵件地址*</label>
-              <input type="email" class="input" placeholder="請輸入電子郵件地址" style="color: rgb(0, 0, 0);">
-
-              <label style="margin:2% 0 2% 0;">性別*</label>
-              <div>
-                <input type="radio" id="huey" name="drone" value="huey"
-                        checked>
-                <label for="huey">男</label>
-              </div>
-              <div>
-                <input type="radio" id="dewey" name="drone" value="dewey">
-                <label for="dewey">女</label>
-              </div>
-              <div>
-                <input type="radio" id="louie" name="drone" value="louie">
-                <label for="louie">其他</label>
-              </div>
-
-              <label style="margin:2% 0 2% 0;">飲食習慣*</label>
-              <div>
-                <input type="radio" id="huey" name="drone" value="huey"
-                        checked>
-                <label for="huey">葷</label>
-              </div>
-              <div>
-                <input type="radio" id="dewey" name="drone" value="dewey">
-                <label for="dewey">素</label>
-              </div>
-
-              <label style="margin:2% 0 2% 0;">報名場次*</label>
-              
-              <button>送出</button>
             </div>
           </div>
         </div>
