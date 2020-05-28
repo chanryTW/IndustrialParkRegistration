@@ -31,64 +31,60 @@
                     <form>
                       <!-- 單位名稱 -->
                       <div class="form-group">
-                        <label for="demo_name">單位名稱</label>
+                        <label for="demo_name">單位名稱*</label>
                         <input class="form-control" type="text" placeholder="請輸入園區/學校單位名稱" id="demo_name">
                       </div>
 
                       <!-- 單位職稱 -->
                       <div class="form-group">
-                        <label for="demo_name">單位職稱</label>
+                        <label for="demo_name">單位職稱*</label>
                         <input class="form-control" type="text" placeholder="請輸入單位職稱" id="demo_name">
                       </div>
 
                       <!-- 姓名 -->
                       <div class="form-group">
-                        <label for="demo_name">姓名</label>
+                        <label for="demo_name">姓名*</label>
                         <input class="form-control" type="text" placeholder="請輸入姓名" id="demo_name">
                       </div>
             
                       <!-- 性別 -->
+                      <label>性別*</label>
                       <div class="form-group">
-                        <label>性別</label>
-                        <div class="radio-group row">
-                          <!-- 男 -->
-                          <div class="four columns">
-                            <input type="radio" id="male" name="demo_radio" value="male" checked>
-                            <label for="male">男</label>
-                          </div>
-                          <!-- 女 -->
-                          <div class="four columns">
-                            <input type="radio" id="female" name="demo_radio" value="female">
-                            <label for="female">女</label>
-                          </div>
-                          <!-- 其他 -->
-                          <div class="four columns">
-                            <input type="radio" id="female" name="demo_radio" value="female">
-                            <label for="female">其他</label>
-                          </div>
+                        <!-- 男 -->
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="demo_radio" id="male" value="male">
+                          <label class="form-check-label" for="male">男</label>
+                        </div>
+                        <!-- 女 -->
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="demo_radio" id="female" value="female">
+                          <label class="form-check-label" for="female">女</label>
+                        </div>
+                        <!-- 其他 -->
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="demo_radio" id="female" value="female">
+                          <label class="form-check-label" for="female">其他</label>
                         </div>
                       </div>
 
                       <!-- 飲食習慣 -->
+                      <label>飲食習慣*</label>
                       <div class="form-group">
-                        <label>飲食習慣</label>
-                        <div class="radio-group row">
-                          <!-- 葷 -->
-                          <div class="four columns">
-                            <input type="radio" id="male" name="demo_radio" value="male" checked>
-                            <label for="male">葷</label>
-                          </div>
-                          <!-- 素 -->
-                          <div class="four columns">
-                            <input type="radio" id="female" name="demo_radio" value="female">
-                            <label for="female">素</label>
-                          </div>
+                        <!-- 葷 -->
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="male" name="demo_radio" value="male" checked>
+                          <label class="form-check-label" for="male">葷</label>
+                        </div>
+                        <!-- 素 -->
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="female" name="demo_radio" value="female">
+                          <label class="form-check-label" for="female">素</label>
                         </div>
                       </div>
             
                       <!-- 報名場次 -->
                       <div class="form-group">
-                        <label for="demo_select">報名場次</label>
+                        <label for="demo_select">報名場次*</label>
                         <select class="form-control" id="demo_select">
                           <option value="0" value="0" selected disabled>請選擇欲報名的場次</option>
                           <option value="cat">【北區場】109年6月17日(三) 南港軟體園區國際會議中心</option>
