@@ -4,9 +4,12 @@
   <link rel="icon" href="https://industrialarea.azurewebsites.net/favicon.ico">
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
   <title>產業園區廠商情資平台 報名系統</title>
-  <link href="./css/main.3639c985.chunk.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.3639c985.chunk.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- SMTP -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 </head>
 
 <body class="nimbus-is-editor">
@@ -21,119 +24,134 @@
       <div class="contain">
         <div class="full-page">
           <div class="input-container">
-            <div class="input-box card"><h4>產業園區廠商情資平台教育訓練<br>活動報名</h4>
+            <div class="input-box card">
+              <h4>產業園區廠商情資平台教育訓練<br><span style="font-size: 22px;">活動報名</span></h4>
               <img style="position: relative; width: 100%; height: 100%;" alt="" src="./img/banner.png">
                             
               <div class="container">
-                  <!-- form -->
-                    <form>
-                      <!-- 單位名稱 -->
-                      <div class="form-group">
-                        <label for="demo_name">單位名稱*</label>
-                        <input class="form-control" type="text" placeholder="請輸入園區/學校單位名稱" id="demo_name">
-                      </div>
+                <!-- form -->
+                <form>
+                  <!-- 單位名稱 -->
+                  <div class="form-group">
+                    <label for="section">單位名稱*</label>
+                    <input class="form-control" type="text" placeholder="請輸入園區/學校單位名稱" id="section">
+                  </div>
 
-                      <!-- 單位職稱 -->
-                      <div class="form-group">
-                        <label for="demo_name">單位職稱*</label>
-                        <input class="form-control" type="text" placeholder="請輸入單位職稱" id="demo_name">
-                      </div>
+                  <!-- 單位職稱 -->
+                  <div class="form-group">
+                    <label for="position">單位職稱*</label>
+                    <input class="form-control" type="text" placeholder="請輸入單位職稱" id="position">
+                  </div>
 
-                      <!-- 姓名 -->
-                      <div class="form-group">
-                        <label for="demo_name">姓名*</label>
-                        <input class="form-control" type="text" placeholder="請輸入姓名" id="demo_name">
-                      </div>
-            
-                      <!-- 性別 -->
-                      <label>性別*</label>
-                      <div class="form-group">
-                        <!-- 男 -->
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="demo_radio" id="male" value="male">
-                          <label class="form-check-label" for="male">男</label>
-                        </div>
-                        <!-- 女 -->
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="demo_radio" id="female" value="female">
-                          <label class="form-check-label" for="female">女</label>
-                        </div>
-                        <!-- 其他 -->
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="demo_radio" id="female" value="female">
-                          <label class="form-check-label" for="female">其他</label>
-                        </div>
-                      </div>
+                  <!-- 姓名 -->
+                  <div class="form-group">
+                    <label for="userName">姓名*</label>
+                    <input class="form-control" type="text" placeholder="請輸入姓名" id="userName">
+                  </div>
+        
+                  <!-- 性別 -->
+                  <label>性別*</label>
+                  <div class="form-group">
+                    <!-- 男 -->
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="sex_radio" id="male" value="male" checked>
+                      <label class="form-check-label" for="male">男</label>
+                    </div>
+                    <!-- 女 -->
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="sex_radio" id="female" value="female">
+                      <label class="form-check-label" for="female">女</label>
+                    </div>
+                    <!-- 其他 -->
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="sex_radio" id="other" value="other">
+                      <label class="form-check-label" for="other">其他</label>
+                    </div>
+                  </div>
 
-                      <!-- 飲食習慣 -->
-                      <label>飲食習慣*</label>
-                      <div class="form-group">
-                        <!-- 葷 -->
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="male" name="demo_radio" value="male" checked>
-                          <label class="form-check-label" for="male">葷</label>
-                        </div>
-                        <!-- 素 -->
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" id="female" name="demo_radio" value="female">
-                          <label class="form-check-label" for="female">素</label>
-                        </div>
-                      </div>
-            
-                      <!-- 報名場次 -->
-                      <div class="form-group">
-                        <label for="demo_select">報名場次*</label>
-                        <select class="form-control" id="demo_select">
-                          <option value="0" selected disabled>請選擇欲報名的場次</option>
-                          <option value="cat">【北區場】109年6月17日(三) 南港軟體園區國際會議中心</option>
-                          <option value="dog">【中區場】109年7月7日(二) 台中工業區服務中心人才培訓中心</option>
-                          <option value="bear">【南區場】109年6月24日(三) 蓮潭國際會館國際二廳會議室</option>
-                        </select>
-                      </div>
-            
-                      <!-- 備註 -->
-                      <div class="form-group">
-                        <label for="demo_textarea">備註</label>
-                        <textarea class="form-control" id="demo_textarea"></textarea>
-                      </div>
-            
-                      <button type="button" id="submit" class="button-primary form-control">確認送出</button>
-            
-                    </form>
+                  <!-- 飲食習慣 -->
+                  <label>飲食習慣*</label>
+                  <div class="form-group">
+                    <!-- 葷 -->
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="Meat" name="eat_radio" value="Meat" checked>
+                      <label class="form-check-label" for="Meat">葷</label>
+                    </div>
+                    <!-- 素 -->
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="vegetarian" name="eat_radio" value="vegetarian">
+                      <label class="form-check-label" for="vegetarian">素</label>
+                    </div>
+                  </div>
+        
+                  <!-- 報名場次 -->
+                  <div class="form-group">
+                    <label for="session_select">報名場次*</label>
+                    <select class="form-control" id="session_select">
+                      <option value="未選擇" selected disabled>請選擇欲報名的場次</option>
+                      <option value="北">【北區場】109年6月17日(三) 南港軟體園區國際會議中心</option>
+                      <option value="中">【中區場】109年7月7日(二) 台中工業區服務中心人才培訓中心</option>
+                      <option value="南">【南區場】109年6月24日(三) 蓮潭國際會館國際二廳會議室</option>
+                    </select>
+                  </div>
+        
+                  <!-- 備註 -->
+                  <div class="form-group">
+                    <label for="remarks_textarea">備註</label>
+                    <textarea class="form-control" id="remarks_textarea"></textarea>
+                  </div>
+        
+                  <button type="button" id="submit" class="button-primary form-control">確認送出</button>
+        
+                </form>
               </div>
             
-              <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
               <script>
                 $(function() {
                   $('#submit').on('click', function() {
                     
+                    // 單位名稱
+                    var section = $('#section').val() || '未填寫';
+
+                    // 單位職稱
+                    var position = $('#position').val() || '未填寫';
+
                     // 姓名
-                    var name = $('#demo_name').val() || '未填寫';
+                    var userName = $('#userName').val() || '未填寫';
             
                     // 性別
                     var sex = function() {
                       var v;
-                      $('[name="demo_radio"]').each(function() {
+                      $('[name="sex_radio"]').each(function() {
+                        if($(this).prop('checked') === true) v = $(this).val();
+                      });
+                      return v;
+                    };
+
+                    // 飲食習慣
+                    var eat = function() {
+                      var v;
+                      $('[name="eat_radio"]').each(function() {
                         if($(this).prop('checked') === true) v = $(this).val();
                       });
                       return v;
                     };
             
-                    // 類別
-                    var cat = $('#demo_select').val() || '未填寫';
+                    // 報名場次
+                    var session = $('#session_select').val() || '未填寫';
             
-                    // 內容
-                    var msg = $('#demo_textarea').val() || '未填寫';
+                    // 備註
+                    var remarks = $('#remarks_textarea').val() || '未填寫';
             
                     // post
                     var data = {
-                      'entry.257531381': "1",
-                      'entry.123054719': "2",
-                      'entry.1802611064': "3",
-                      'entry.3992845': "4",
-                      'entry.277620602': "5",
-                      'entry.1396436476': "6",
-                      'entry.1867475675': "7"
+                      'entry.257531381': section,
+                      'entry.123054719': position,
+                      'entry.1802611064': userName,
+                      'entry.3992845': sex,
+                      'entry.277620602': eat,
+                      'entry.1396436476': session,
+                      'entry.1867475675': remarks
                     };
                     $.ajax({
                       type: 'POST',
@@ -143,6 +161,23 @@
                       dataType: 'jsonp',
                       complete: function() {
                         alert('資料已送出！');
+                        emailjs.init("user_B7Nb9TpDYHuihhajCCfIq");
+
+                        let templateParams = {
+                          "userMail": "xxxxx@gmail.com",
+                          "user": userName
+                        }
+
+                        var service_id = "default_service";
+                        var template_id = "industrialparkregistration";
+                        emailjs.send(service_id, template_id, templateParams)
+                          .then((response) => {
+                            console.log('SUCCESS!', response.status, response.text);
+                          })
+                          .catch((error) => {
+                            console.log('FAILED...', error);
+                          })
+
                       }
                     });
                     
