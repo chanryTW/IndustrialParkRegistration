@@ -31,6 +31,12 @@
               <div class="container">
                 <!-- form -->
                 <form>
+                  <!-- 信箱 -->
+                  <div class="form-group">
+                    <label for="userMail">E-mail*</label>
+                    <input class="form-control" type="email" placeholder="請輸入E-mail" id="userMail">
+                  </div>
+
                   <!-- 單位名稱 -->
                   <div class="form-group">
                     <label for="section">單位名稱*</label>
@@ -110,6 +116,9 @@
                 $(function() {
                   $('#submit').on('click', function() {
                     
+                    // 信箱
+                    var userMail = $('#userMail').val() || '未填寫';
+
                     // 單位名稱
                     var section = $('#section').val() || '未填寫';
 
@@ -145,6 +154,7 @@
             
                     // post
                     var data = {
+                      'entry.2042082732': userMail,
                       'entry.257531381': section,
                       'entry.123054719': position,
                       'entry.1802611064': userName,
@@ -164,8 +174,9 @@
                         emailjs.init("user_B7Nb9TpDYHuihhajCCfIq");
 
                         let templateParams = {
-                          "userMail": "xxxxx@gmail.com",
-                          "user": userName
+                          "userMail": userMail,
+                          "userName": userName,
+                          "position": position
                         }
 
                         var service_id = "default_service";
