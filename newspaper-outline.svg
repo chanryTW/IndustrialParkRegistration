@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:32;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:32;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:#FFFFFF;}
+</style>
+<title>ionicons-v5-n</title>
+<path class="st0" d="M368,415.9V72c0-13.2-10.8-24-24-24H72c-13.2,0-24,10.8-24,24v352c0.1,22.1,17.9,39.9,40,40h328"/>
+<path class="st0" d="M416,464L416,464c-26.5,0-48-21.5-48-48V128h72c13.3,0,24,10.7,24,24v264C464,442.5,442.5,464,416,464z"/>
+<line class="st1" x1="240" y1="128" x2="304" y2="128"/>
+<line class="st1" x1="240" y1="192" x2="304" y2="192"/>
+<line class="st1" x1="112" y1="256" x2="304" y2="256"/>
+<line class="st1" x1="112" y1="320" x2="304" y2="320"/>
+<line class="st1" x1="112" y1="384" x2="304" y2="384"/>
+<path class="st2" d="M176,208h-64c-8.8,0-16-7.2-16-16v-64c0-8.8,7.2-16,16-16h64c8.8,0,16,7.2,16,16v64
+	C192,200.8,184.8,208,176,208z"/>
+</svg>

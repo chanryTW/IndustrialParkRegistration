@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
   <title>產業園區廠商情資平台 報名系統</title>
   <link rel="stylesheet" href="./css/main.3639c985.chunk.css">
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="main.js"></script>
+
   <!-- SMTP -->
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 </head>
@@ -26,33 +29,137 @@
           <div class="input-container">
             <div class="input-box card">
               <h4>產業園區廠商情資平台教育訓練<br><span style="font-size: 22px;">活動報名</span></h4>
-              <img style="position: relative; width: 100%; height: 100%;" alt="" src="./img/banner.png">
-                            
+              <!-- <img style="position: relative; width: 100%; height: 100%;" alt="" src="./img/banner.png"> -->
+              
               <div class="container">
                 <!-- form -->
-                <form style="width: 100%;">
+                <form style="width: 100%;" onsubmit="return false;">
                   <!-- 信箱 -->
                   <div class="form-group">
                     <label for="userMail">E-mail*</label>
-                    <input class="form-control" type="email" placeholder="請輸入E-mail" id="userMail">
+                    <input class="form-control" type="email" placeholder="請輸入E-mail" id="userMail" required="required">
                   </div>
 
                   <!-- 單位名稱 -->
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="section">單位名稱*</label>
                     <input class="form-control" type="text" placeholder="請輸入園區/學校單位名稱" id="section">
+                  </div> -->
+                  <div class="form-group">
+                    <label for="section">單位名稱*</label>
+                    <select class="form-control" id="section" required="required">
+                      <option value="未選擇" selected disabled>請選擇園區/學校單位名稱</option>
+                      <OPTGROUP label="園區-北區">
+                        <option value="北區工業區管理處">北區工業區管理處</option>
+                        <option value="新北產業園區服務中心">新北產業園區服務中心</option>
+                        <option value="武崙兼瑞芳工業區服務中心">大武崙兼瑞芳工業區服務中心</option>
+                        <option value="土城工業區服務中心">土城工業區服務中心</option>
+                        <option value="樹林工業區服務中心">樹林工業區服務中心</option>
+                        <option value="美崙(兼和平及光華)工業區服務中心">美崙(兼和平及光華)工業區服務中心</option>
+                        <option value="豐樂工業區服務中心">豐樂工業區服務中心</option>
+                        <option value="龜山工業區服務中心">龜山工業區服務中心</option>
+                        <option value="龍德兼利澤工業區服務中心">龍德兼利澤工業區服務中心</option>
+                        <option value="桃園幼獅工業區服務中心">桃園幼獅工業區服務中心</option>
+                        <option value="中壢工業區服務中心">中壢工業區服務中心</option>
+                        <option value="平鎮工業區服務中心">平鎮工業區服務中心</option>
+                        <option value="觀音工業區服務中心">觀音工業區服務中心</option>
+                        <option value="大園工業區服務中心">大園工業區服務中心</option>
+                        <option value="林口工業區服務中心">林口工業區服務中心</option>
+                        <option value="新竹工業區服務中心">新竹工業區服務中心</option>
+                      </OPTGROUP>
+                      <OPTGROUP label="園區-中區">
+                        <option value="中部工業區管理處">中部工業區管理處</option>
+                        <option value="台中港關連工業區服務中心">台中港關連工業區服務中心</option>
+                        <option value="頭份(兼竹南及銅鑼)工業區服務中心">頭份(兼竹南及銅鑼)工業區服務中心</option>
+                        <option value="彰化濱海工業區服務中心">彰化濱海工業區服務中心</option>
+                        <option value="雲林科技工業區服務中心">雲林科技工業區服務中心</option>
+                        <option value="芳苑(兼社頭織襪)工業區服務中心">芳苑(兼社頭織襪)工業區服務中心</option>
+                        <option value="斗六工業區服務中心">斗六工業區服務中心</option>
+                        <option value="豐田兼元長工業區服務中心">豐田兼元長工業區服務中心</option>
+                        <option value="台中工業區服務中心">台中工業區服務中心</option>
+                        <option value="南崗兼竹山工業區服務中心">南崗兼竹山工業區服務中心</option>
+                        <option value="大里工業區服務中心">大里工業區服務中心</option>
+                        <option value="大甲幼獅工業區服務中心">大甲幼獅工業區服務中心</option>
+                        <option value="全興工業區服務中心">全興工業區服務中心</option>
+                        <option value="福興兼埤頭及田中工業區服務中心">福興兼埤頭及田中工業區服務中心</option>
+                      </OPTGROUP>
+                      <OPTGROUP label="園區-南區">
+                        <option value="南區工業區管理處">南區工業區管理處</option>
+                        <option value="嘉太工業區服務中心">嘉太工業區服務中心</option>
+                        <option value="朴子兼義竹工業區服務中心">朴子兼義竹工業區服務中心</option>
+                        <option value="民雄兼頭橋工業區服務中心">民雄兼頭橋工業區服務中心</option>
+                        <option value="新營工業區服務中心">新營工業區服務中心</option>
+                        <option value="官田工業區服務中心">官田工業區服務中心</option>
+                        <option value="永康工業區服務中心">永康工業區服務中心</option>
+                        <option value="台南科技工業區服務中心">台南科技工業區服務中心</option>
+                        <option value="安平工業區服務中心">安平工業區服務中心</option>
+                        <option value="仁大工業區服務中心">仁大工業區服務中心</option>
+                        <option value="永安工業區服務中心">永安工業區服務中心</option>
+                        <option value="大發(兼鳳山)工業區服務中心">大發(兼鳳山)工業區服務中心</option>
+                        <option value="高雄臨海工業區服務中心">高雄臨海工業區服務中心</option>
+                        <option value="屏東工業區服務中心">屏東工業區服務中心</option>
+                        <option value="內埔工業區服務中心">內埔工業區服務中心</option>
+                        <option value="屏南工業區服務中心">屏南工業區服務中心</option>
+                      </OPTGROUP>
+                      <OPTGROUP label="學校-北區">
+                        <option value="國立臺北科技大學">國立臺北科技大學</option>
+                        <option value="中國文化大學">中國文化大學</option>
+                        <option value="中華科技大學">中華科技大學</option>
+                        <option value="國立東華大學">國立東華大學</option>
+                        <option value="國立臺東大學">國立臺東大學</option>
+                        <option value="國立中央大學">國立中央大學</option>
+                        <option value="中華科技大學">中華科技大學</option>
+                        <option value="國立宜蘭大學">國立宜蘭大學</option>
+                        <option value="明新科技大學">明新科技大學</option>
+                        <option value="中原大學">中原大學</option>
+                        <option value="國立中央大學">國立中央大學</option>
+                        <option value="元智大學">元智大學</option>
+                        <option value="開南大學">開南大學</option>
+                        <option value="龍華科技大學">龍華科技大學</option>
+                        <option value="國立交通大學">國立交通大學</option>
+                      </OPTGROUP>
+                      <OPTGROUP label="學校-中區">
+                        <option value="國立中興大學">國立中興大學</option>
+                        <option value="中華大學">中華大學</option>
+                        <option value="建國科技大學">建國科技大學</option>
+                        <option value="國立雲林科技大學">國立雲林科技大學</option>
+                        <option value="大葉大學">大葉大學</option>
+                        <option value="國立虎尾科技大學">國立虎尾科技大學</option>
+                        <option value="東海大學">東海大學</option>
+                        <option value="南開科技大學">南開科技大學</option>
+                        <option value="修平科技大學">修平科技大學</option>
+                        <option value="國立勤益科技大學">國立勤益科技大學</option>
+                        <option value="國立彰化師範大學">國立彰化師範大學</option>
+                      </OPTGROUP>
+                      <OPTGROUP label="學校-南區">
+                        <option value="國立中正大學">國立中正大學</option>
+                        <option value="吳鳳科技大學">吳鳳科技大學</option>
+                        <option value="嘉南藥理大學">嘉南藥理大學</option>
+                        <option value="崑山科技大學">崑山科技大學</option>
+                        <option value="正修科技大學">正修科技大學</option>
+                        <option value="高苑科技大學">高苑科技大學</option>
+                        <option value="國立屏東科技大學">國立屏東科技大學</option>
+                      </OPTGROUP>
+                      <OPTGROUP label="其他單位">
+                        <option value="經濟部工業局">經濟部工業局</option>
+                        <option value="財團法人工業技術研究院">財團法人工業技術研究院</option>
+                        <option value="財團法人金屬工業研究發展中心">財團法人金屬工業研究發展中心</option>
+                        <option value="中華民國工業區廠商聯合總會">中華民國工業區廠商聯合總會</option>
+                        <option value="其他">其他(請填寫在最下方備註)</option>
+                      </OPTGROUP>
+                    </select>
                   </div>
 
                   <!-- 單位職稱 -->
                   <div class="form-group">
                     <label for="position">單位職稱*</label>
-                    <input class="form-control" type="text" placeholder="請輸入單位職稱" id="position">
+                    <input class="form-control" type="text" placeholder="請輸入單位職稱" id="position" required="required">
                   </div>
 
                   <!-- 姓名 -->
                   <div class="form-group">
                     <label for="userName">姓名*</label>
-                    <input class="form-control" type="text" placeholder="請輸入姓名" id="userName">
+                    <input class="form-control" type="text" placeholder="請輸入姓名" id="userName" required="required">
                   </div>
         
                   <!-- 性別 -->
@@ -67,11 +174,6 @@
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" name="sex_radio" id="female" value="female">
                       <label class="form-check-label" for="female">女</label>
-                    </div>
-                    <!-- 其他 -->
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="sex_radio" id="other" value="other">
-                      <label class="form-check-label" for="other">其他</label>
                     </div>
                   </div>
 
@@ -93,7 +195,7 @@
                   <!-- 報名場次 -->
                   <div class="form-group">
                     <label for="session_select">報名場次*</label>
-                    <select class="form-control" id="session_select">
+                    <select class="form-control" id="session_select" required="required">
                       <option value="未選擇" selected disabled>請選擇欲報名的場次</option>
                       <option value="北">【北區場】109年6月17日(三) 南港軟體園區國際會議中心</option>
                       <option value="中">【中區場】109年7月7日(二) 台中工業區服務中心人才培訓中心</option>
@@ -106,95 +208,48 @@
                     <label for="remarks_textarea">備註</label>
                     <textarea class="form-control" id="remarks_textarea"></textarea>
                   </div>
+
+                  <!-- 個資聲明 -->
+                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div style="border-radius:15px" class="modal-content">
+                        <div style="background-color: #970032; border-radius:10px 10px 0 0;" class="modal-header">
+                          <h5 style="display: inline-block; width: 100%; text-align: center; color: white;" class="modal-title" id="exampleModalLongTitle">
+                            個人資料蒐集、處理及利用告知暨同意書</h5>
+                            <span style="color: white;" aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          財團法人金屬工業研究發展中心(以下簡稱本中心)為落實個人資料之保護，茲依據個人資料保護法(以下稱個資法)第 8 條規定告知下列事項:<br>
+                          一、本中心因受經濟部工業局委託執行/產業園區產業動態情資暨服務平台計畫之事由，蒐集、處理及利用您所提供，或未來將提供的個人資料(下稱個資)，謹先告知下列事項:<br>
+                          (一)蒐集目的:辦理專案計畫活動及執行計畫相關業務之所需。 <br>
+                          (二)個資類別:姓名、公司名稱、金融代碼或帳戶及連絡方式(包括但不限於電話號碼、E-MAIL、居住或工作地址)等，或其他得以直接或間接識別您個人之資料。<br>
+                          (三)利用期間:至蒐集目的消失為止。<br>
+                          (四)利用地區:中華民國地區及符合蒐集目的之本中心國外合作或委辦 對象所在地區。<br>
+                          (五)利用者:經濟部、本中心及其他與經濟部或本中心有業務往來之公 務及非公務機關。<br>
+                          (六)利用方式:在不違反蒐集目的前提下，以網際網路、電子郵件、書 面、傳真及其他合法方式利用之。<br>
+                          二、此外，對於您所提供給本中心的個人資料，依據個資法第 3 條規定， 您本人可行使以下權利:<br>
+                          (一)查詢或請求閱覽。 (二)請求製給複製本。 (三)請求補充或更正。 (四)請求停止蒐集、處理及利用。 (五)請求刪除。<br>
+                          三、如欲行使前項權利，請洽本中心專線(07)351-3121 分機2420或來信至 062206@mail.mirdc.org.tw。<br>
+                          四、本中心基於蒐集目的而需蒐集、處理或利用您的個人資料，您可以自由選擇是否提供。若您選擇不提供或是提供不完全時，將可能導致您無法參加、申請相關活動或計畫，或本中心將無法提供您完整的服務，亦可能無法維護您的權益。<br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
         
-                  <button type="button" id="submit" class="button-primary form-control">確認送出</button>
+                  <div class="form-group">
+                    <div class="form-check form-check-inline">
+                      <input style="margin-top: 7px" class="form-check-input" type="checkbox" id="accCheckbox" value="1" required="required">
+                      <label class="form-check-label" for="accCheckbox">我已同意 <u><a style="color:#006ab4">個人資料蒐集、處理及利用告知暨同意書</a></u></label>
+                    </div>
+                  </div>
+
+                  <!-- 送出按鈕 -->
+                  <button id="submit" type="submit" class="button-primary form-control">確認送出</button>
         
                 </form>
+
               </div>
-            
-              <script>
-                $(function() {
-                  $('#submit').on('click', function() {
-                    
-                    // 信箱
-                    var userMail = $('#userMail').val() || '未填寫';
-
-                    // 單位名稱
-                    var section = $('#section').val() || '未填寫';
-
-                    // 單位職稱
-                    var position = $('#position').val() || '未填寫';
-
-                    // 姓名
-                    var userName = $('#userName').val() || '未填寫';
-            
-                    // 性別
-                    var sex = function() {
-                      var v;
-                      $('[name="sex_radio"]').each(function() {
-                        if($(this).prop('checked') === true) v = $(this).val();
-                      });
-                      return v;
-                    };
-
-                    // 飲食習慣
-                    var eat = function() {
-                      var v;
-                      $('[name="eat_radio"]').each(function() {
-                        if($(this).prop('checked') === true) v = $(this).val();
-                      });
-                      return v;
-                    };
-            
-                    // 報名場次
-                    var session = $('#session_select').val() || '未填寫';
-            
-                    // 備註
-                    var remarks = $('#remarks_textarea').val() || '未填寫';
-            
-                    // post
-                    var data = {
-                      'entry.2042082732': userMail,
-                      'entry.257531381': section,
-                      'entry.123054719': position,
-                      'entry.1802611064': userName,
-                      'entry.3992845': sex,
-                      'entry.277620602': eat,
-                      'entry.1396436476': session,
-                      'entry.1867475675': remarks
-                    };
-                    $.ajax({
-                      type: 'POST',
-                      url: 'https://docs.google.com/forms/d/e/1FAIpQLScX5RecUWz4ppgE6sP4OlOKA2GU6dyy82qHBpqYlMorIutCUw/formResponse',
-                      data: data,
-                      contentType: 'application/json',
-                      dataType: 'jsonp',
-                      complete: function() {
-                        alert('資料已送出！');
-                        emailjs.init("user_B7Nb9TpDYHuihhajCCfIq");
-
-                        let templateParams = {
-                          "userMail": userMail,
-                          "userName": userName,
-                          "position": position
-                        }
-
-                        var service_id = "default_service";
-                        var template_id = "industrialparkregistration";
-                        emailjs.send(service_id, template_id, templateParams)
-                          .then((response) => {
-                            console.log('SUCCESS!', response.status, response.text);
-                          })
-                          .catch((error) => {
-                            console.log('FAILED...', error);
-                          })
-
-                      }
-                    });
-                    
-                  });
-                });
-              </script>
               
             </div>
           </div>
