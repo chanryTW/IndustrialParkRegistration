@@ -99,7 +99,6 @@ $(function() {
                         console.log('確認信寄送成功', response.status, response.text);
                         // 跳轉完成頁面
                         $('#mainPage').addClass("d-none");
-                        $('#mainIMG').addClass("d-none");
                         $('#finalPage').removeClass("d-none");
                     })
                     .catch((error) => {
