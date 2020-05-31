@@ -43,15 +43,19 @@ $(function() {
             // 判斷日期與地址
             var date = "";
             var address = "";
+            var addressHTML = "";
             if (session=="北") {
                 date = "109年6月17日(三)";
                 address = "南港軟體園區國際會議中心A棟2樓會議室(台北市南港區三重路19-10號A棟2樓)";
+                addressHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1860.1019579702472!2d121.6125266567069!3d25.057922306786807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aca7707ec0e7%3A0x55ecf4a9a11c72ff!2zMTE15Y-w5YyX5biC5Y2X5riv5Y2A5LiJ6YeN6LevMTktMTDomZ9BIOajnzIg5qiT!5e0!3m2!1szh-TW!2stw!4v1590917749320!5m2!1szh-TW!2stw" width="90%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>';
             } else if (session=="中") {
                 date = "109年6月24日(三)";
                 address = "蓮潭國際會館國際二廳會議室(高雄市左營區崇德路801號)";
+                addressHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.3533996252972!2d120.29757631535016!3d22.677884534812044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e050a564d3729%3A0xd6047c765100b1be!2zODEz6auY6ZuE5biC5bem54ef5Y2A5bSH5b636LevODAx6Jmf!5e0!3m2!1szh-TW!2stw!4v1590918008491!5m2!1szh-TW!2stw" width="90%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>';
             } else if (session=="南") {
                 date = "109年7月7日(二)";
                 address = "台中工業區服務中心人才培訓中心會議室(台中工業區27路17號3樓）";
+                addressHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.142472577201!2d120.5990065153677!3d24.16673567865984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e15ab218a29%3A0xe763a8974f79748d!2z57aT5r-f6YOo5bel5qWt5bGA5bel5qWt5Y2A55Kw5aKD5L-d6K235Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1590918058016!5m2!1szh-TW!2stw" width="90%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>';
             }
 
             // 備註
@@ -85,7 +89,8 @@ $(function() {
                         "section": section,
                         "position": position,
                         "date": date,
-                        "address": address
+                        "address": address,
+                        "addressHTML": addressHTML
                     }
                     var service_id = "default_service";
                     var template_id = "industrialparkregistration";
