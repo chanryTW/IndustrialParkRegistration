@@ -4,10 +4,15 @@ $('#myModal').on('shown.bs.modal', function () {
 
 $(function() {
     $('#submit').on('click', function() {
-        
         // 驗證
         if ($('#userMail').val().search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/) != -1 && $('#section').val() != null && $('#position').val() != null && $('#userName').val() != null && $('#session_select').val() != null && document.getElementById('accCheckbox').checked) {
             console.log("驗證成功");
+            // 轉圈圈
+            $(this).button('loading').delay(1000).queue(function() {
+                // $(this).button('reset');
+                // $(this).dequeue(); 
+            });
+
             // 信箱
             var userMail = $('#userMail').val() || '未填寫';
             // && $('#accCheckbox').val() != 
