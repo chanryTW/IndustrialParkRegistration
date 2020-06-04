@@ -83,6 +83,7 @@ $(function() {
                 data: data,
                 contentType: 'application/json',
                 dataType: 'jsonp',
+                async:false,
                 complete: function(data) {
                     console.log("表單傳送成功");
 
